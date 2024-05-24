@@ -8,9 +8,9 @@ const cookieParser = require('cookie-parser');
 app.use(express.json());
 app.use(
   cors({
-    credentials: true,
     origin: ['https://try-client.vercel.app'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
   })
 );
 app.use(cookieParser());
