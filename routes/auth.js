@@ -101,11 +101,17 @@ router.post('/login', async (req, res) => {
     }
   );
 
+  // res.cookie('token', token, {
+  //   httpOnly: false,
+  //   maxAge: 36000000,
+  // });
+
   res.cookie('token', token, {
     httpOnly: false,
     maxAge: 36000000,
+    sameSite: 'None',
+    secure: true,
   });
-
   res.json({
     token,
     success: true,
