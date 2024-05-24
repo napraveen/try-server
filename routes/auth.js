@@ -100,9 +100,9 @@ router.post('/login', async (req, res) => {
       expiresIn: 36000000,
     }
   );
-
   res.cookie('token', token, {
-    httpOnly: true,
+    httpOnly: false,
+    secure: true,
     maxAge: 36000000,
   });
 
